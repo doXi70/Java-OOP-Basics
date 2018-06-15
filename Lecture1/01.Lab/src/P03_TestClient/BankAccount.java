@@ -1,8 +1,12 @@
-package P02_GettersAndSetters;
+package P03_TestClient;
 
 public class BankAccount {
-    public int id;
-    public double balance;
+    private int id;
+    private double balance;
+
+    public BankAccount(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;
@@ -24,20 +28,20 @@ public class BankAccount {
         if (amount > 0) {
             this.balance += amount;
         } else {
-            throw new UnsupportedOperationException("Amount can't be below zero.");
+            System.out.println("Insufficient balance");
         }
     }
 
     public void withdraw(double amount) {
-        if (this.balance > amount) {
+        if (this.balance >= amount) {
             balance -= amount;
         } else {
-            throw new UnsupportedOperationException("You don't have enought balance.");
+            System.out.println("Insufficient balance");
         }
     }
 
     @Override
     public String toString() {
-        return "ID" + this.id;
+        return String.format("Account ID%d, balance %.2f", this.id, this.balance);
     }
 }
