@@ -44,7 +44,7 @@ public class Worker extends Human {
 
     @Override
     public String toString() {
-        return String.format("First Name: %s%nFirst Name: %s%nWeek Salary: %.2f%n" +
+        return String.format("First Name: %s%nLast Name: %s%nWeek Salary: %.2f%n" +
                         "Hours per day: %.2f%nSalary per hour: %.2f%n",
                 super.getFirstName(), super.getLastName(), this.weekSalary,
                 this.workHoursPerDay, this.moneyPerHour());

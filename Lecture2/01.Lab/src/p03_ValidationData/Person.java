@@ -1,4 +1,4 @@
-package p04_FirstAndReserveTeam;
+package p03_ValidationData;
 
 public class Person {
     private String firstName;
@@ -37,18 +37,6 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return this.age;
-    }
-
-    private void setAge(int age) {
-        if (age < 0) {
-            throw new IllegalArgumentException("Age cannot be zero or negative integer");
-        }
-
-        this.age = age;
-    }
-
     public double getSalary() {
         return this.salary;
     }
@@ -59,6 +47,14 @@ public class Person {
         }
 
         this.salary = salary;
+    }
+
+    private void setAge(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be zero or negative integer");
+        }
+
+        this.age = age;
     }
 
     public void increaseSalary(double bonus) {
