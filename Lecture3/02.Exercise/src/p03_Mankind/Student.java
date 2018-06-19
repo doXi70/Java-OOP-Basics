@@ -18,7 +18,7 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return String.format("First Name: %s%nLast Name: %s%nFaculty number: %s",
+        return String.format("First Name: %s%nLast Name: %s%nFaculty number: %s%n",
                 super.getFirstName(), super.getLastName(), this.facultyNumber);
     }
 }
