@@ -1,9 +1,15 @@
 package p02_MultipleInheritance;
 
+/*
+   Obekt koito v sebesi sudurja obekti - composition.
+   Edin obekt si predava zaduljeniqta na nqkakuv drug obektt - Delegation.
+ */
 public class Main {
     public static void main(String[] args) {
-        // obekt koito v sebesi sudurja obekti - composition
-        // edin obekt si predava zaduljeniqta na nqkakuv drug obektt - Delegation
+        Puppy puppy = new Puppy();
+        puppy.eat();
+        puppy.bark();
+        puppy.weep();
 
     }
 }
