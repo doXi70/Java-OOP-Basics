@@ -1,6 +1,6 @@
-package p06_Animals.dogs;
+package p06_Animals.cats;
 
-public class Tomcat extends Dog {
+public class Tomcat extends Cat {
 
     public Tomcat(String name, int age, String gender) {
         super(name, age, gender);

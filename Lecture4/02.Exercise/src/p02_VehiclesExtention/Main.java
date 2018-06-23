@@ -4,26 +4,16 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static p01_Vehicles.Vehicle.FORMAT;
-
-// Factory pattern
-// Common pattern
-// Dispatcher
-
 @SuppressWarnings("Duplicates")
 public class Main {
-
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String[] carTokens = reader.readLine().split(" ");
-        Vehicle car = new Car(Double.parseDouble(carTokens[1]), Double.parseDouble(carTokens[2]), Double.parseDouble(carTokens[3]));
+        Vehicle car = new Car(Double.parseDouble(carTokens[1]), Double.parseDouble(carTokens[2]));
 
         String[] truckTokens = reader.readLine().split(" ");
-        Vehicle truck = new Truck(Double.parseDouble(truckTokens[1]), Double.parseDouble(truckTokens[2]), Double.parseDouble(truckTokens[3]));
-
-        String[] busTokens = reader.readLine().split(" ");
-        Vehicle bus = new Bus(Double.parseDouble(busTokens[1]), Double.parseDouble(busTokens[2]), Double.parseDouble(busTokens[3]));
+        Vehicle truck = new Truck(Double.parseDouble(truckTokens[1]), Double.parseDouble(truckTokens[2]));
 
         int cmdsCount = Integer.parseInt(reader.readLine());
         for (int i = 0; i < cmdsCount; i++) {
@@ -33,29 +23,22 @@ public class Main {
             double amount = Double.parseDouble(tokens[2]);
 
             if (cmd.equals("Drive")) {
-                driveVehicle(car, truck, bus, vehicleType, amount);
+                if (vehicleType.equals("Car")) {
+                    car.drive(amount);
+                } else {
+                    truck.drive(amount);
+                }
             } else {
-                driveVehicle(car, truck, bus, vehicleType, amount);
+                if (vehicleType.equals("Car")) {
+                    car.refuel(amount);
+                } else {
+                    truck.refuel(amount);
+                }
             }
         }
 
-        System.out.println(String.format("Car: %s", FORMAT.format(car.getFuelQuantity())));
-        System.out.println(String.format("Truck: %s", FORMAT.format(truck.getFuelQuantity())));
-    }
-
-    private static void driveVehicle(Vehicle car, Vehicle truck,
-                                     Vehicle bus, String vehicleType, double amount) {
-
-        switch (vehicleType) {
-            case "Car":
-                car.drive(amount);
-                break;
-            case "Bus":
-                bus.drive(amount);
-                break;
-            default:
-                truck.drive(amount);
-                break;
-        }
+        System.out.println(String.format("Car: %.2f", Math.round(car.getFuelQuantity() * 100.0) / 100.0));
+        System.out.println(String.format("Truck: %.2f", Math.round(truck.getFuelQuantity() * 100.0) / 100.0));
+        System.out.println();
     }
 }

@@ -2,6 +2,7 @@ package p01_Vehicles;
 
 import java.text.DecimalFormat;
 
+@SuppressWarnings("Duplicates")
 public class Car extends Vehicle {
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
 

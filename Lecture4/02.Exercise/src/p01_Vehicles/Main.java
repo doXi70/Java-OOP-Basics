@@ -3,14 +3,9 @@ package p01_Vehicles;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.DecimalFormat;
-
-
-import static p01_Vehicles.Vehicle.FORMAT;
 
 @SuppressWarnings("Duplicates")
 public class Main {
-
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -42,7 +37,8 @@ public class Main {
             }
         }
 
-        System.out.println(String.format("Car: %s", FORMAT.format(car.getFuelQuantity())));
-        System.out.println(String.format("Truck: %s", FORMAT.format(truck.getFuelQuantity())));
+        System.out.println(String.format("Car: %.2f", Math.round(car.getFuelQuantity() * 100.0) / 100.0));
+        System.out.println(String.format("Truck: %.2f", Math.round(truck.getFuelQuantity() * 100.0) / 100.0));
+        System.out.println();
     }
 }

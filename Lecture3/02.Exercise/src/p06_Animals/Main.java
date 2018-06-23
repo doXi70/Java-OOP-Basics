@@ -3,7 +3,7 @@ package p06_Animals;
 import p06_Animals.cats.Cat;
 import p06_Animals.cats.Kitten;
 import p06_Animals.dogs.Dog;
-import p06_Animals.dogs.Tomcat;
+import p06_Animals.cats.Tomcat;
 import p06_Animals.frogs.Frog;
 
 import java.io.BufferedReader;

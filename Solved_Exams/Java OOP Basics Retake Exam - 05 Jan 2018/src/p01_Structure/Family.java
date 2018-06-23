@@ -1,12 +1,10 @@
-package taskI_Structure;
+package p01_Structure;
 
 public class Family {
     private String id;
 
 
-    public Family(String id, Colony colony) {
+    public Family(String id) {
         this.id = id;
     }
-
-
 }

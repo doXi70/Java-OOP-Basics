@@ -1,9 +1,6 @@
 package p01_Vehicles;
 
-import java.text.DecimalFormat;
-
 public abstract class Vehicle {
-    public static final DecimalFormat FORMAT = new DecimalFormat("#.00");
     private double fuelQuantity;
     private double fuelConsumption;
 

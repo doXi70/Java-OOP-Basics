@@ -31,7 +31,7 @@ public class Truck extends Vehicle {
     @Override
     public void refuel(double liters) {
         double currLitters = super.getFuelQuantity();
-        currLitters += (liters * 0.95);
+        currLitters = currLitters + ((liters * 95) / 100);
         super.setFuelQuantity(currLitters);
     }
 }

@@ -4,11 +4,12 @@ import java.text.DecimalFormat;
 
 @SuppressWarnings("Duplicates")
 public class Car extends Vehicle {
-    private DecimalFormat decimalFormat = new DecimalFormat("#.##");
+    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-    public Car(double fuelQuantity, double fuelConsumption, double tankQuantity) {
-        super(fuelQuantity, fuelConsumption, tankQuantity);
+    public Car(double fuelQuantity, double fuelConsumption) {
         double actualFuelConsumption = fuelConsumption + 0.9;
+
+        super.setFuelQuantity(fuelQuantity);
         super.setFuelConsumption(actualFuelConsumption);
     }
 
@@ -29,15 +30,7 @@ public class Car extends Vehicle {
     @Override
     public void refuel(double liters) {
         double currLitters = super.getFuelQuantity();
-        if (liters <= 0) {
-            throw new IllegalArgumentException("Fuel must be a positive number");
-        }
-
         currLitters += liters;
-        if (getTankCapacity() < liters) {
-            throw new IllegalArgumentException("Cannot fit in tank");
-        }
-
         super.setFuelQuantity(currLitters);
     }
 }
