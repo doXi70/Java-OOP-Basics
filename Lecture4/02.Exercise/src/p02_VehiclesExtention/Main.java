@@ -4,7 +4,7 @@ import p02_VehiclesExtention.exceptions.ApplicationException;
 import p02_VehiclesExtention.vehicles.Bus;
 import p02_VehiclesExtention.vehicles.Car;
 import p02_VehiclesExtention.vehicles.Truck;
-import p02_VehiclesExtention.vehicles.BasicVehicle;
+import p02_VehiclesExtention.vehicles.BaseVehicle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,15 +15,15 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String[] carTokens = reader.readLine().split(" ");
-        BasicVehicle car = new Car(Double.parseDouble(carTokens[1]),
+        BaseVehicle car = new Car(Double.parseDouble(carTokens[1]),
                 Double.parseDouble(carTokens[2]), Double.parseDouble(carTokens[3]));
 
         String[] truckTokens = reader.readLine().split(" ");
-        BasicVehicle truck = new Truck(Double.parseDouble(truckTokens[1]),
+        BaseVehicle truck = new Truck(Double.parseDouble(truckTokens[1]),
                 Double.parseDouble(truckTokens[2]), Double.parseDouble(truckTokens[3]));
 
         String[] busTokens = reader.readLine().split(" ");
-        BasicVehicle bus = new Bus(Double.parseDouble(busTokens[1]),
+        BaseVehicle bus = new Bus(Double.parseDouble(busTokens[1]),
                 Double.parseDouble(busTokens[2]), Double.parseDouble(busTokens[3]));
 
 
@@ -46,7 +46,7 @@ public class Main {
         System.out.println(bus);
     }
 
-    private static void executeAction(BasicVehicle car, BasicVehicle truck, BasicVehicle bus,
+    private static void executeAction(BaseVehicle car, BaseVehicle truck, BaseVehicle bus,
                                       String action, String vehicle, double amount) {
         switch (action) {
             case "Refuel":
@@ -62,7 +62,7 @@ public class Main {
         }
     }
 
-    private static void driveVehicle(BasicVehicle car, BasicVehicle truck, BasicVehicle bus,
+    private static void driveVehicle(BaseVehicle car, BaseVehicle truck, BaseVehicle bus,
                                      String vehicle, double amount) {
         switch (vehicle) {
             case "Car":
@@ -77,7 +77,7 @@ public class Main {
         }
     }
 
-    private static void refuelVehicle(BasicVehicle car, BasicVehicle truck, BasicVehicle bus,
+    private static void refuelVehicle(BaseVehicle car, BaseVehicle truck, BaseVehicle bus,
                                       String vehicle, double amount) {
         switch (vehicle) {
             case "Car":

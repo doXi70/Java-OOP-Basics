@@ -5,7 +5,7 @@ import p02_VehiclesExtention.exceptions.fuel.InvalidTankCapacityException;
 
 import static p02_VehiclesExtention.constants.Constants.*;
 
-public class Truck extends BasicVehicle {
+public class Truck extends BaseVehicle {
     public Truck(double fuelQuantity, double fuelConsumption, double tankCapacity) {
         super(fuelQuantity, fuelConsumption + TRUCK_AIR_CONDITION_MODE_ON, tankCapacity);
     }

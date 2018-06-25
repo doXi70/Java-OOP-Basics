@@ -6,12 +6,12 @@ import p02_VehiclesExtention.exceptions.fuel.InvalidTankCapacityException;
 
 import static p02_VehiclesExtention.constants.Constants.*;
 
-public abstract class BasicVehicle {
+public abstract class BaseVehicle {
     private double fuelQuantity;
     private double fuelConsumption;
     private double tankCapacity;
 
-    public BasicVehicle(double fuelQuantity, double fuelConsumption, double tankCapacity) {
+    public BaseVehicle(double fuelQuantity, double fuelConsumption, double tankCapacity) {
         this.setFuelQuantity(fuelQuantity);
         this.setFuelConsumption(fuelConsumption);
         this.setTankCapacity(tankCapacity);
