@@ -1,6 +1,6 @@
 package p02_VehiclesExtention.vehicles;
 
-import p02_VehiclesExtention.exceptions.ApplicationException;
+import p02_VehiclesExtention.exceptions.distance.InvalidDistanceException;
 
 import static p02_VehiclesExtention.constants.Constants.BUS_AIR_CONDITION_MODE_ON;
 
@@ -13,8 +13,8 @@ public class Bus extends BaseVehicle {
         setAirConditionerOff();
         try {
             super.drive(distance);
-        } catch (ApplicationException aie) {
-            throw new ApplicationException(aie.getMessage());
+        } catch (InvalidDistanceException ide) {
+            throw new InvalidDistanceException(ide.getMessage());
         } finally {
             setAirConditionerOn();
         }
